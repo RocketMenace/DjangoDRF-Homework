@@ -1,0 +1,42 @@
+[
+{
+  "model": "course.course",
+  "pk": 1,
+  "fields": {
+    "title": "Программирование",
+    "preview": "",
+    "description": "Курс по программированию"
+  }
+},
+{
+  "model": "course.course",
+  "pk": 2,
+  "fields": {
+    "title": "Математика",
+    "preview": "",
+    "description": "Курс по математике"
+  }
+},
+{
+  "model": "course.lesson",
+  "pk": 1,
+  "fields": {
+    "title": "Базы данных",
+    "description": "Оновы баз данных",
+    "preview": "",
+    "link": "https://mysite.com/lesson/1",
+    "course": 1
+  }
+},
+{
+  "model": "course.lesson",
+  "pk": 7,
+  "fields": {
+    "title": "Computer  science",
+    "description": "Архитектура компьютерных  систем",
+    "preview": "",
+    "link": "https://mysite.com/lesson/2",
+    "course": 1
+  }
+}
+]
