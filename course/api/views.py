@@ -3,30 +3,30 @@ from course.models import Course, Lesson
 from course.api.serializers import CourseSerializer, LessonSerializer
 
 
-class LessonListView(generics.ListAPIView):
+class LessonListAPIView(generics.ListAPIView):
 
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
 
 
-class LessonDetailView(generics.RetrieveAPIView):
+class LessonDetailAPIView(generics.RetrieveAPIView):
 
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
 
 
-class LessonCreateView(generics.CreateAPIView):
+class LessonCreateAPIView(generics.CreateAPIView):
 
     serializer_class = LessonSerializer
 
 
-class LessonUpdateView(generics.UpdateAPIView):
+class LessonUpdateAPIView(generics.UpdateAPIView):
 
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
 
 
-class LessonDestroyView(generics.DestroyAPIView):
+class LessonDestroyAPIView(generics.DestroyAPIView):
 
     queryset = Lesson.objects.all()
 

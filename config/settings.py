@@ -32,6 +32,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+INTERNAL_IPS = [
+'127.0.0.1',
+]
+
 
 # Application definition
 
@@ -47,9 +51,14 @@ INSTALLED_APPS = [
     "users",
     # 3rd party
     "rest_framework",
+    "debug_toolbar",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
+    # 3rd party
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # Local
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

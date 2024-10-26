@@ -12,12 +12,15 @@ psycopg2-binary = "^2.9.10"
 djangorestframework = "^3.15.2"
 pillow = "^11.0.0"
 python-dotenv = "^1.0.1"
+django-filter = "^24.3"
+
 
 
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.28.0"
 black = "^24.10.0"
+django-debug-toolbar = "4.2"
 
 [build-system]
 requires = ["poetry-core"]
