@@ -12,7 +12,7 @@ class UserCreateAPIView(generics.CreateAPIView):
 
 class UserListAPIView(generics.ListAPIView):
 
-    queryset = User.objects.all()
+    queryset = User.objects.prefetch_related("user_payments").all()
     serializer_class = UserSerializer
 
 
@@ -32,9 +32,11 @@ class UserDeleteAPIView(generics.DestroyAPIView):
 
     queryset = User.objects.all()
 
+
 class PaymentCreateAPIView(generics.CreateAPIView):
 
     serializer_class = PaymentSerializer
+
 
 class PaymentListAPIView(generics.ListAPIView):
 
@@ -44,15 +46,18 @@ class PaymentListAPIView(generics.ListAPIView):
     filterset_fields = ("paid_course", "paid_lesson", "payment_method")
     ordering_fields = ("payment_date",)
 
+
 class PaymentDetailAPIView(generics.RetrieveAPIView):
 
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
 
+
 class PaymentUpdateAPIView(generics.UpdateAPIView):
 
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
+
 
 class PaymentDeleteAPIView(generics.DestroyAPIView):
 
