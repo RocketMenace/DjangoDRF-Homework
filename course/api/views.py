@@ -8,9 +8,16 @@ from users.permissions import IsModerator, IsOwner
 
 class LessonListAPIView(generics.ListAPIView):
 
-    queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
-    permission_classes = [IsAuthenticated, IsModerator]
+    permission_classes = [IsAuthenticated | IsModerator]
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_authenticated and user.is_staff:
+            return Lesson.objects.all()
+        elif user.is_authenticated:
+            return Lesson.objects.all().filter(owner=user.id)
+        return Lesson.objects.none()
 
 
 class LessonDetailAPIView(generics.RetrieveAPIView):
@@ -50,7 +57,7 @@ class CourseViewSet(viewsets.ModelViewSet):
     def get_permissions(self):
         if self.action == "list":
             self.permission_classes = [
-                IsAuthenticated & IsModerator,
+                IsAuthenticated | IsModerator,
             ]
         elif self.action == "retrieve":
             self.permission_classes = [IsAuthenticated, IsModerator | IsOwner]
@@ -64,3 +71,11 @@ class CourseViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_authenticated and user.is_staff:
+            return Course.objects.all()
+        elif user.is_authenticated:
+            return Course.objects.all().filter(owner=user.id)
+        return Course.objects.none()

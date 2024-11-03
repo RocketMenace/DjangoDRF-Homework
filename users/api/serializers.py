@@ -11,3 +11,9 @@ class UserSerializer(serializers.ModelSerializer):
 
         model = User
         fields = "__all__"
+
+class UserPrivateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ["email", "city"]
