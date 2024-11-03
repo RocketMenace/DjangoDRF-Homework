@@ -5,16 +5,8 @@
   "fields": {
     "title": "Программирование",
     "preview": "",
-    "description": "Курс по программированию"
-  }
-},
-{
-  "model": "course.course",
-  "pk": 2,
-  "fields": {
-    "title": "Математика",
-    "preview": "",
-    "description": "Курс по математике"
+    "description": "Курс программирования",
+    "owner": 4
   }
 },
 {
@@ -22,21 +14,35 @@
   "pk": 1,
   "fields": {
     "title": "Базы данных",
-    "description": "Оновы баз данных",
+    "description": "Теория баз данных",
     "preview": "",
     "link": "https://mysite.com/lesson/1",
-    "course": 1
+    "course": 1,
+    "owner": 4
   }
 },
 {
   "model": "course.lesson",
-  "pk": 7,
+  "pk": 2,
   "fields": {
-    "title": "Computer  science",
-    "description": "Архитектура компьютерных  систем",
+    "title": "Computer Science",
+    "description": "Основы Computer Science",
     "preview": "",
-    "link": "https://mysite.com/lesson/2",
-    "course": 1
+    "link": "http://my_site.com/lesson_2",
+    "course": 1,
+    "owner": 4
+  }
+},
+{
+  "model": "course.lesson",
+  "pk": 3,
+  "fields": {
+    "title": "Computer Science",
+    "description": "Linux",
+    "preview": "",
+    "link": "http://my_site.com/lesson_4",
+    "course": 1,
+    "owner": 4
   }
 }
 ]

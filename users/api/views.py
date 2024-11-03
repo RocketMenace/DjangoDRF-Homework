@@ -1,13 +1,23 @@
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.filters import OrderingFilter
-from .serializers import UserSerializer, PaymentSerializer
+from django.contrib.auth.hashers import make_password
 from rest_framework import generics
-from users.models import User, Payment
+from rest_framework.permissions import AllowAny
+
+from users.models import User
+from .serializers import UserSerializer
 
 
 class UserCreateAPIView(generics.CreateAPIView):
 
     serializer_class = UserSerializer
+    permission_classes = [
+        AllowAny,
+    ]
+
+    def perform_create(self, serializer):
+        serializer.validated_data["password"] = make_password(
+            serializer.validated_data.get("password")
+        )
+        serializer.save()
 
 
 class UserListAPIView(generics.ListAPIView):
@@ -31,34 +41,3 @@ class UserUpdateAPIView(generics.UpdateAPIView):
 class UserDeleteAPIView(generics.DestroyAPIView):
 
     queryset = User.objects.all()
-
-
-class PaymentCreateAPIView(generics.CreateAPIView):
-
-    serializer_class = PaymentSerializer
-
-
-class PaymentListAPIView(generics.ListAPIView):
-
-    queryset = Payment.objects.all()
-    serializer_class = PaymentSerializer
-    filter_backends = [DjangoFilterBackend, OrderingFilter]
-    filterset_fields = ("paid_course", "paid_lesson", "payment_method")
-    ordering_fields = ("payment_date",)
-
-
-class PaymentDetailAPIView(generics.RetrieveAPIView):
-
-    queryset = Payment.objects.all()
-    serializer_class = PaymentSerializer
-
-
-class PaymentUpdateAPIView(generics.UpdateAPIView):
-
-    queryset = Payment.objects.all()
-    serializer_class = PaymentSerializer
-
-
-class PaymentDeleteAPIView(generics.DestroyAPIView):
-
-    queryset = Payment.objects.all()

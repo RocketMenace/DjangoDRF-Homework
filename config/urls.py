@@ -25,6 +25,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("course.api.urls", namespace="course")),
     path("users/", include("users.api.urls", namespace="users")),
+    path("payments/", include("payments.api.urls", namespace="payments")),
     path("__debug__/", include("debug_toolbar.urls")),
 ]
 

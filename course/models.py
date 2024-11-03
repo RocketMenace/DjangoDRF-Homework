@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 # Create your models here.
@@ -9,6 +10,13 @@ class Course(models.Model):
     title = models.CharField(max_length=150, verbose_name="название")
     preview = models.ImageField(upload_to="course/", verbose_name="превью", **NULLABLE)
     description = models.TextField(verbose_name="описание")
+    owner = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        verbose_name="владелец",
+        related_name="courses_owner",
+        **NULLABLE
+    )
 
     class Meta:
         verbose_name = "курс"
@@ -24,8 +32,17 @@ class Lesson(models.Model):
     title = models.CharField(max_length=150, verbose_name="предмет")
     description = models.TextField(verbose_name="описание")
     preview = models.ImageField(upload_to="lessons/", verbose_name="превью", **NULLABLE)
-    link = models.URLField(verbose_name="ссылка на урок")
-    course = models.ForeignKey(Course, related_name="lessons", verbose_name="курс", on_delete=models.CASCADE)
+    link = models.CharField(max_length=200, verbose_name="ссылка на урок")
+    course = models.ForeignKey(
+        Course, related_name="lessons", verbose_name="курс", on_delete=models.CASCADE
+    )
+    owner = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        verbose_name="владелец",
+        related_name="lessons_owner",
+        **NULLABLE
+    )
 
     class Meta:
         verbose_name = "урок"
@@ -35,6 +52,3 @@ class Lesson(models.Model):
 
     def __str__(self):
         return self.title
-
-
-

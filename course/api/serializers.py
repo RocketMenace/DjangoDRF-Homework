@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from course.models import Course, Lesson
+from users.permissions import IsOwner
 
 
 class LessonSerializer(serializers.ModelSerializer):

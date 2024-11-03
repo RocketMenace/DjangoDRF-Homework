@@ -3,14 +3,14 @@
   "model": "users.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$600000$75VRDZYV8XN13iVXwqnNpq$N4FOQ8B+xKRy2lzdlZQFpVPFFCToswda3HZFUUD18Xc=",
-    "last_login": "2024-10-26T10:55:17.693Z",
+    "password": "pbkdf2_sha256$600000$TyABIzOeK71p5329MNUqny$EYNJfpwkBjKnFZ3cfnj9oexP7y2V2T5zp0TN6tl9sZE=",
+    "last_login": "2024-11-02T15:51:57.285Z",
     "is_superuser": true,
     "first_name": "admin",
     "last_name": "django",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2024-10-24T12:11:20.239Z",
+    "date_joined": "2024-11-02T15:37:11.905Z",
     "email": "djangoadmin@sky.pro",
     "phone": "",
     "city": "",
@@ -23,17 +23,39 @@
   "model": "users.user",
   "pk": 2,
   "fields": {
-    "password": "qwerasdf123",
+    "password": "pbkdf2_sha256$600000$rQ9ql9CBCBREBksfBZO04D$pw6MO3+5/vefnczQUkBtXGY5rN2/q+wJ7m9wePY4vGw=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "moderator",
+    "last_name": "content",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-11-02T15:37:30.604Z",
+    "email": "moderator@sky.pro",
+    "phone": "777777777",
+    "city": "",
+    "avatar": "",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$o6DzXi5vqHDr7qLqjcFPIl$1K58cX1sBriq+BTQgJ2Yl5+3dMm4j2Bp9jsE6Gt8IGg=",
     "last_login": null,
     "is_superuser": false,
     "first_name": "",
     "last_name": "",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2024-10-24T13:48:55.444Z",
-    "email": "test@gmail.com",
-    "phone": "89857774565",
-    "city": "Новосибирск",
+    "date_joined": "2024-11-02T16:21:07.993Z",
+    "email": "test_2@gmail.com",
+    "phone": "54163254",
+    "city": "Москва",
     "avatar": "",
     "groups": [],
     "user_permissions": []
@@ -41,58 +63,42 @@
 },
 {
   "model": "users.user",
-  "pk": 3,
+  "pk": 5,
   "fields": {
-    "password": "qwerasdf321",
+    "password": "pbkdf2_sha256$600000$YpiK6EsZTmzjzN98PeVpyh$HgfRjaKUjq0QKelZqfvN4ign7FCFRZtBhGVNBQ/QVT0=",
     "last_login": null,
     "is_superuser": false,
     "first_name": "",
     "last_name": "",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2024-10-24T13:49:38.649Z",
-    "email": "test_1@gmail.com",
-    "phone": "89857774566",
-    "city": "Владивосток",
+    "date_joined": "2024-11-02T16:21:41.394Z",
+    "email": "test_3@gmail.com",
+    "phone": "5416325456",
+    "city": "Рязань",
     "avatar": "",
     "groups": [],
     "user_permissions": []
   }
 },
 {
-  "model": "users.payment",
-  "pk": 1,
+  "model": "users.user",
+  "pk": 6,
   "fields": {
-    "user": 3,
-    "payment_date": "2024-10-26T10:57:35.802Z",
-    "paid_course": null,
-    "paid_lesson": 8,
-    "amount_paid": 2500,
-    "payment_method": "наличная оплата"
-  }
-},
-{
-  "model": "users.payment",
-  "pk": 2,
-  "fields": {
-    "user": 3,
-    "payment_date": "2024-10-26T10:58:16.474Z",
-    "paid_course": 1,
-    "paid_lesson": null,
-    "amount_paid": 10000,
-    "payment_method": "перевод на счет"
-  }
-},
-{
-  "model": "users.payment",
-  "pk": 3,
-  "fields": {
-    "user": 2,
-    "payment_date": "2024-10-26T10:58:36.197Z",
-    "paid_course": 2,
-    "paid_lesson": null,
-    "amount_paid": 10000,
-    "payment_method": "наличная оплата"
+    "password": "pbkdf2_sha256$600000$0TfYJmtzYeNeR3Sl35alRV$JYcTZx6Pf+V12p5BhlN+Zr5opS8d0yMB76vpIIcbVrE=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-11-02T16:22:08.987Z",
+    "email": "test_4@gmail.com",
+    "phone": "54163254562",
+    "city": "Омск",
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
   }
 }
 ]

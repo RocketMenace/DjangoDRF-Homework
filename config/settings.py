@@ -20,7 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
 
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -33,7 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INTERNAL_IPS = [
-'127.0.0.1',
+    "127.0.0.1",
 ]
 
 
@@ -49,10 +48,12 @@ INSTALLED_APPS = [
     # Local
     "course",
     "users",
+    "payments",
     # 3rd party
     "rest_framework",
     "debug_toolbar",
     "django_filters",
+    "rest_framework_simplejwt",
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,16 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = "users.User"
+
+# JWT tokens settings
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+}
 
 
 # Internationalization
