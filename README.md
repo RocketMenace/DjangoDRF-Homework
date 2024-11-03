@@ -23,3 +23,12 @@
 ```bash
   python3 manage.py runserver
 ```
+```bash
+  python3 manage.py createmoderatorgroup
+```
+```bash
+  python3 manage.py createmoderator
+```
+```bash
+  python3 manage.py csu
+```
