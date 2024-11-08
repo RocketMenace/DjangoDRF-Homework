@@ -10,6 +10,116 @@
   }
 },
 {
+  "model": "course.course",
+  "pk": 2,
+  "fields": {
+    "title": "Математика",
+    "preview": "",
+    "description": "Курс по математике",
+    "owner": 6
+  }
+},
+{
+  "model": "course.course",
+  "pk": 3,
+  "fields": {
+    "title": "Экономика",
+    "preview": "",
+    "description": "Курс по экономике",
+    "owner": 7
+  }
+},
+{
+  "model": "course.course",
+  "pk": 4,
+  "fields": {
+    "title": "Геометрия",
+    "preview": "",
+    "description": "курс по геометрии",
+    "owner": 5
+  }
+},
+{
+  "model": "course.course",
+  "pk": 5,
+  "fields": {
+    "title": "Тестирование",
+    "preview": "",
+    "description": "Курс по тестированию",
+    "owner": 8
+  }
+},
+{
+  "model": "course.course",
+  "pk": 6,
+  "fields": {
+    "title": "Русский язык",
+    "preview": "",
+    "description": "Курс  по русскому   языку",
+    "owner": 8
+  }
+},
+{
+  "model": "course.course",
+  "pk": 7,
+  "fields": {
+    "title": "Business",
+    "preview": "",
+    "description": "Course about business",
+    "owner": 8
+  }
+},
+{
+  "model": "course.course",
+  "pk": 8,
+  "fields": {
+    "title": "Investments",
+    "preview": "",
+    "description": "Course about investments",
+    "owner": 8
+  }
+},
+{
+  "model": "course.course",
+  "pk": 9,
+  "fields": {
+    "title": "Market equity",
+    "preview": "",
+    "description": "Course about investments",
+    "owner": 8
+  }
+},
+{
+  "model": "course.course",
+  "pk": 10,
+  "fields": {
+    "title": "Finance",
+    "preview": "",
+    "description": "Course about finance",
+    "owner": 8
+  }
+},
+{
+  "model": "course.course",
+  "pk": 11,
+  "fields": {
+    "title": "География",
+    "preview": "",
+    "description": "Курс географии",
+    "owner": 8
+  }
+},
+{
+  "model": "course.course",
+  "pk": 12,
+  "fields": {
+    "title": "Веб разработка",
+    "preview": "",
+    "description": "Курс по веб разработке",
+    "owner": 8
+  }
+},
+{
   "model": "course.lesson",
   "pk": 1,
   "fields": {
@@ -43,6 +153,171 @@
     "link": "http://my_site.com/lesson_4",
     "course": 1,
     "owner": 4
+  }
+},
+{
+  "model": "course.lesson",
+  "pk": 4,
+  "fields": {
+    "title": "ORM foundations",
+    "description": "test",
+    "preview": "",
+    "link": "www.my-site.com/materials/2",
+    "course": 1,
+    "owner": 4
+  }
+},
+{
+  "model": "course.lesson",
+  "pk": 5,
+  "fields": {
+    "title": "ORM foundations",
+    "description": "test",
+    "preview": "",
+    "link": "https://www.youtube.com/lessons/6",
+    "course": 1,
+    "owner": 4
+  }
+},
+{
+  "model": "course.lesson",
+  "pk": 6,
+  "fields": {
+    "title": "Another lesson",
+    "description": "Demo description",
+    "preview": "",
+    "link": "https://www.youtube.com",
+    "course": 2,
+    "owner": 2
+  }
+},
+{
+  "model": "course.lesson",
+  "pk": 7,
+  "fields": {
+    "title": "Системное администрирование",
+    "description": "Тестовое описание",
+    "preview": "",
+    "link": "https://www.youtube.com",
+    "course": 1,
+    "owner": 8
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 6,
+  "fields": {
+    "user": 4,
+    "course": 1,
+    "status": "не активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 11,
+  "fields": {
+    "user": 6,
+    "course": 2,
+    "status": "не активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 12,
+  "fields": {
+    "user": 7,
+    "course": 3,
+    "status": "активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 14,
+  "fields": {
+    "user": 5,
+    "course": 4,
+    "status": "активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 15,
+  "fields": {
+    "user": 8,
+    "course": 4,
+    "status": "не активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 16,
+  "fields": {
+    "user": 8,
+    "course": 10,
+    "status": "активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 17,
+  "fields": {
+    "user": 8,
+    "course": 7,
+    "status": "не активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 18,
+  "fields": {
+    "user": 8,
+    "course": 8,
+    "status": "не активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 19,
+  "fields": {
+    "user": 8,
+    "course": 9,
+    "status": "не активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 20,
+  "fields": {
+    "user": 8,
+    "course": 12,
+    "status": "не активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 21,
+  "fields": {
+    "user": 8,
+    "course": 11,
+    "status": "не активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 22,
+  "fields": {
+    "user": 8,
+    "course": 6,
+    "status": "не активна"
+  }
+},
+{
+  "model": "course.subscription",
+  "pk": 23,
+  "fields": {
+    "user": 8,
+    "course": 5,
+    "status": "активна"
   }
 }
 ]

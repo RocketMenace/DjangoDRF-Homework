@@ -12,7 +12,7 @@ class Command(BaseCommand):
             last_name="content",
             is_staff=True,
             is_superuser=False,
-            phone = "777777777"
+            phone="777777777",
         )
         group = Group.objects.get(name="Модератор")
         user.groups.add(group)

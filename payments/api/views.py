@@ -1,10 +1,9 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.filters import OrderingFilter
-from .serializers import PaymentSerializer
 from rest_framework import generics
+from rest_framework.filters import OrderingFilter
+
 from payments.models import Payment
-from django.contrib.auth.hashers import make_password
-from rest_framework.permissions import AllowAny
+from .serializers import PaymentSerializer
 
 
 class PaymentCreateAPIView(generics.CreateAPIView):

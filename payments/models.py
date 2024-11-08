@@ -1,10 +1,12 @@
+from django.contrib.auth import get_user_model
 from django.db import models
+
 from course.models import Lesson, Course
-from users.models import User
 
 # Create your models here.
 
 NULLABLE = {"blank": True, "null": True}
+User = get_user_model()
 
 
 class Payment(models.Model):

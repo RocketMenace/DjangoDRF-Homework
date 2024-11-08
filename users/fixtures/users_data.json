@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$600000$TyABIzOeK71p5329MNUqny$EYNJfpwkBjKnFZ3cfnj9oexP7y2V2T5zp0TN6tl9sZE=",
-    "last_login": "2024-11-02T15:51:57.285Z",
+    "last_login": "2024-11-07T14:20:51.716Z",
     "is_superuser": true,
     "first_name": "admin",
     "last_name": "django",
@@ -52,7 +52,7 @@
     "last_name": "",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2024-11-02T16:21:07.993Z",
+    "date_joined": "2024-11-02T16:21:07Z",
     "email": "test_2@gmail.com",
     "phone": "54163254",
     "city": "Москва",
@@ -96,6 +96,46 @@
     "email": "test_4@gmail.com",
     "phone": "54163254562",
     "city": "Омск",
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$Oj5uYJZDuEAiVvHPDFvzs0$dMQxWXEeJPEqHNWWBRCj+ZHJvroExsy/4MyFIQYOGIM=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-11-04T19:26:00.172Z",
+    "email": "test_77@gmail.com",
+    "phone": "473534534",
+    "city": "New York",
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$lVF0q1EYSWjNkIm5aHZ7i7$j0VyXYMtbsCFfEhfy5HaLW2KncgT/h9E0QMowyLTstU=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-11-06T03:53:18.722Z",
+    "email": "test_111@gmail.com",
+    "phone": "4526772832",
+    "city": "Denver",
     "avatar": "",
     "groups": [],
     "user_permissions": []
