@@ -1,7 +1,7 @@
 from django.contrib.auth.hashers import make_password
 from rest_framework import generics
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
-from users.permissions import IsOwner
+
 from users.models import User
 from .serializers import UserSerializer, UserPrivateSerializer
 

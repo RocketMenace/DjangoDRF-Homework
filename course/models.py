@@ -76,11 +76,13 @@ class Subscription(models.Model):
         verbose_name="курс",
         **NULLABLE,
     )
+    price = models.PositiveIntegerField(verbose_name="стоимость подписки", **NULLABLE)
     status = models.CharField(
         max_length=10,
         choices=Status.choices,
         default=Status.ACTIVE,
         verbose_name="статус",
+        **NULLABLE,
     )
 
     class Meta:
