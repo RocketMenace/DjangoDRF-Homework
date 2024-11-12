@@ -4,10 +4,12 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from drf_yasg.utils import swagger_auto_schema
 
 from course.api.serializers import (
     CourseSerializer,
     LessonSerializer,
+    SubscriptionSerializer,
 )
 from course.models import Course, Lesson, Subscription
 from users.permissions import IsModerator, IsOwner
@@ -17,6 +19,7 @@ from .paginators import ItemPaginator
 class SubscriptionAPIView(APIView):
     permission_classes = [IsAuthenticated | IsModerator]
 
+    @swagger_auto_schema(responses={200: SubscriptionSerializer()}, operation_description="POST /subscription/")
     def post(self, *args, **kwargs):
 
         user = self.request.user
