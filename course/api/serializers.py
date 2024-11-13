@@ -30,14 +30,14 @@ class CourseSerializer(serializers.ModelSerializer):
     def get_subscription_status(self, obj):
         request = self.context.get("request")
         try:
-            return obj.subscriptions.get(course=obj.id).status
+            return obj.subscriptions.get(course=obj.id, user=request.user).status
         except ObjectDoesNotExist:
             obj.subscriptions.create(
                 user=request.user,
                 course=obj.id,
                 status=Subscription.Status.NOT_ACTIVE,
             )
-            return obj.subscriptions.get(course=obj.id).status
+            return obj.subscriptions.get(course=obj.id, user=request.user).status
 
     def get_count_lessons(self, obj):
         return obj.lessons.count()

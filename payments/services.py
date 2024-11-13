@@ -8,7 +8,7 @@ stripe.api_key = STRIPE_SECRET_KEY
 class StripePaymentManager:
 
     def __init__(self, price_value, course_id):
-        self.success_url = "http://127.0.0.1:8000/"
+        self.success_url = "http://127.0.0.1:8000/payments/success/"
         self.price_value = price_value
         self.course_id = course_id
 
@@ -37,3 +37,6 @@ class StripePaymentManager:
         product = self.create_stripe_product()
         price = self.create_stripe_price(product)
         return self.create_stripe_session(price)
+
+    def check_status(self, session_id):
+        return stripe.checkout.Session.retrieve(session_id)

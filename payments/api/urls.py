@@ -7,6 +7,7 @@ from .views import (
     PaymentDetailAPIView,
     PaymentUpdateAPIView,
     PaymentDeleteAPIView,
+    PaymentStatusUpdateView
 )
 
 app_name = PaymentsConfig.name
@@ -26,4 +27,5 @@ urlpatterns = [
         PaymentDeleteAPIView.as_view(),
         name="delete_payments",
     ),
+    path("success/", PaymentStatusUpdateView.as_view(), name="success")
 ]

@@ -10,7 +10,7 @@ from course.models import Course, Lesson, Subscription
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
 
-    list_display = ["id", "title", "description"]
+    list_display = ["id", "title", "description", "updated"]
     list_filter = ["title"]
 
 
