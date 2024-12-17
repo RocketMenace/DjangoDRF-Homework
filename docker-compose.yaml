@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  django_db:
+    image: postgres:latest
+    container_name: django_db
+    env_file: ".env"
+    volumes:
+      - db_data:/var/lib/postgresql
+    restart: always
+    environment:
+      POSTGRES_DB:

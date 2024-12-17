@@ -10,6 +10,7 @@ User = get_user_model()
 
 
 class Payment(models.Model):
+
     class PaymentMethod(models.TextChoices):
         CASH = "наличная оплата"
         TRANSFER = "перевод на счет"
