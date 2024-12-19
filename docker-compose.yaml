@@ -1,12 +1,57 @@
-version: '3.9'
+version: "3.8"
 
 services:
   django_db:
     image: postgres:latest
     container_name: django_db
-    env_file: ".env"
+    env_file:
+      - "./.env"
     volumes:
-      - db_data:/var/lib/postgresql
-    restart: always
-    environment:
-      POSTGRES_DB:
+      - db_data:/data/db
+
+  django_app:
+    build: .
+    container_name: django_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - logs:/app/logs
+    env_file:
+      - "./.env"
+    depends_on:
+      - django_db
+      - redis
+    restart: on-failure
+
+  redis:
+    image: redis:latest
+    expose:
+      - "6379"
+
+  celery:
+    build: .
+    env_file:
+      - "./.env"
+    volumes:
+      - .:/app
+    command: celery -A config worker -l info
+    depends_on:
+      - django_db
+      - redis
+    restart: on-failure
+
+  beats:
+    build: .
+    command: celery -A config beat -l info
+    env_file:
+      - "./.env"
+    volumes:
+      - .:/app
+    depends_on:
+      - django_db
+      - redis
+    restart: on-failure
+
+volumes:
+  db_data:
+  logs:
