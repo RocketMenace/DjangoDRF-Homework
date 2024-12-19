@@ -37,3 +37,9 @@
 ```bash
   celery -A config worker --loglevel=info --beat
 ```
+
+Запуск из контейнера используя docker compose file. 
+
+```bash
+  docker-compose up
+```
